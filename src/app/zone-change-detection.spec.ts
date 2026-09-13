@@ -89,7 +89,7 @@ describe('zone.js change detection', () => {
     expect(store.last).toBe(201);
     expect(shown('eager-price-button')).toEqual(['201', '201']);
     // The sibling that has no event of its own is refreshed too, because the
-    // pass had to walk through the OnPush parent to reach the clicked view.
+    // event marks the OnPush parent and its ancestors for check.
     expect(shown('eager-price')).toEqual(['201', '201']);
   });
 
