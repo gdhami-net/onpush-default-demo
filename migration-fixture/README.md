@@ -26,8 +26,8 @@ Two things to notice, both recorded in `expected.diff`:
    `ChangeDetectionStrategy.Eager` added, with the import appended to the end of
    the existing `@angular/core` import list. `price-panel.ts` named
    `ChangeDetectionStrategy.Default` and has it rewritten to `Eager`.
-2. `host.spec.ts` is reported as untouched — "Migration completed (No changes
-   made)" — because the only tsconfig the migration is pointed at in a
+2. `host.spec.ts` never appears in the output (the run reports "Migration
+   completed (4 files modified)" for the app files) because the only tsconfig the migration is pointed at in a
    CLI-generated v22 project is `tsconfig.app.json`, which excludes `*.spec.ts`.
    Add `"tsConfig": "tsconfig.spec.json"` to the `test` target in `angular.json`
    and run it again: the top-level `TopLevelHost` gets the annotation, and
